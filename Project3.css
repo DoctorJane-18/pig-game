@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(to left, #ff1493, #f778a1);
+  font-family: "Raleway";
+  height: 100vh;
+  display: flex;
+  color: #333;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(131, 131, 131, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0rem 3rem 5rem rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.player {
+  flex: 50%;
+  padding: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+.player-name {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  color: yellow;
+}
+
+.score {
+  font-size: 10rem;
+  color: #157dec;
+  font-weight: 800;
+  margin-bottom: auto;
+}
+
+.current {
+  background-color: greenyellow;
+  border: greenyellow solid 1px;
+  opacity: 0.8;
+  width: 65%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 2rem;
+  transition: all 0.75;
+}
+.current-word {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: lime;
+  text-shadow: 2px 2px 3px forestgreen, 2px 2px 5px black;
+}
+
+.current-score {
+  font-size: 6rem;
+  font-weight: 400;
+}
+
+button {
+  position: absolute;
+  border: none;
+  font-size: 1.75rem;
+  font-weight: 300;
+  background-color: #40e0d0;
+  border-radius: 1.5rem;
+  opacity: 0.6;
+  cursor: pointer;
+  transform: translateX (-50%);
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 2.5rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem dodgerblue;
+  left: 37.5%;
+}
+
+button::first-letter {
+  display: inline-block;
+  font-size: 3rem;
+  margin-right: 0.7rem;
+}
+
+.newgame {
+  top: 2rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.roll {
+  top: 40rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.hold {
+  top: 47rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.dice {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 10rem;
+  top: 30%;
+}
+
+.player--active {
+  background-color: rgb(173, 209, 184, 0.5);
+}
+
+.player--active .player-name {
+  font-size: 5rem;
+  text-shadow: 0.2rem 0.2rem 0.5rem red;
+}
+
+.player--active .score {
+  font-size: 12rem;
+  color: aquamarine;
+  text-shadow: 2px 2px 3px forestgreen, 2px 2px 5px black;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+.player--active .current-word {
+  font-size: 2rem;
+}
+
+.player--active .current-score {
+  font-size: 7rem;
+}
+
+button::active {
+  transform: translateX(-50% 3px);
+}
+
+button::focus {
+  outline: none;
+}
+
+.player--winner {
+  background-color: black;
+}
+
+.player--winner .player-name {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+}
+
+.player--winner .score {
+  font-size: 6rem;
+  margin-top: 3rem;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, #f22),
+    color-stop(0.15, #f2f),
+    color-stop(0.3, #22f),
+    color-stop(0.45, #2ff),
+    color-stop(0.6, #2f2),
+    color-stop(0.75, #2f2),
+    color-stop(0.9, #ff2),
+    color-stop(1, #f22)
+  );
+  background-image: gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, #f22),
+    color-stop(0.15, #f2f),
+    color-stop(0.3, #22f),
+    color-stop(0.45, #2ff),
+    color-stop(0.6, #2f2),
+    color-stop(0.75, #2f2),
+    color-stop(0.9, #ff2),
+    color-stop(1, #f22)
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: animatedBackground 5s linear infinite;
+  -moz-animation: animatedBackground 5s linear infinite;
+  -webkit-animation: animatedBackground 5s linear infinite;
+  -ms-animation: animatedBackground 5s linear infinite;
+  -o-animation: animatedBackground 5s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
